@@ -15,63 +15,26 @@
       margin: 0;
       padding: 0;
     }
-    /* Centered Header & Navigation */
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #edf2f7;
-      padding: 30px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .logo-container img {
-      height: 65px;
-      width: auto;
-      display: block;
-    }
-    .nav-buttons {
-      display: flex;
-      gap: 15px;
-    }
-    .btn-nav-secondary {
-      text-decoration: none;
-      color: #2d3748;
-      padding: 10px 22px;
-      font-weight: 600;
-      border-radius: 6px;
-      font-size: 1rem;
-      border: 1px solid #cbd5e0;
-      transition: all 0.2s;
-    }
-    .btn-nav-secondary:hover {
-      background-color: #f7fafc;
-      border-color: #2d3748;
-    }
-    .btn-nav-primary {
-      text-decoration: none;
-      background-color: #111111;
-      color: #ffffff;
-      padding: 10px 22px;
-      font-weight: 600;
-      border-radius: 6px;
-      font-size: 1rem;
-      transition: background 0.2s;
-    }
-    .btn-nav-primary:hover {
-      background-color: #2d3748;
-    }
 
     /* Main Container */
     .main-wrapper {
-      max-width: 1200px; /* Widened slightly to accommodate 4 clean columns */
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
     }
     
+    /* Centered Branding Area */
+    .brand-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .brand-container img {
+      height: 75px; /* Large, prominent branding */
+      width: auto;
+      display: inline-block;
+    }
+    
+    /* Hero Section Card */
     .hero-container {
       background: #ffffff;
       padding: 60px 40px;
@@ -102,22 +65,45 @@
       font-size: 1.1rem;
       color: #4a5568;
     }
-    .hero-cta {
+
+    /* Dual Button Action Row */
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .btn-hero-secondary {
       display: inline-block;
+      text-decoration: none;
+      color: #2d3748;
+      background-color: #ffffff;
+      padding: 18px 40px;
+      font-weight: 700;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      border: 2px solid #cbd5e0;
+      transition: all 0.2s;
+    }
+    .btn-hero-secondary:hover {
+      background-color: #f7fafc;
+      border-color: #2d3748;
+    }
+    .btn-hero-primary {
+      display: inline-block;
+      text-decoration: none;
       background-color: #111111;
       color: #ffffff;
-      text-decoration: none;
-      padding: 18px 45px;
+      padding: 18px 40px;
       font-weight: 700;
       border-radius: 8px;
       font-size: 1.2rem;
       transition: background 0.2s;
     }
-    .hero-cta:hover {
+    .btn-hero-primary:hover {
       background-color: #2d3748;
     }
     
-    /* Audience Grid (Now auto-scaling up to 4 clean columns) */
+    /* Audience Grid (4 Columns) */
     .section-title {
       font-size: 1.3rem;
       color: #718096;
@@ -287,6 +273,7 @@
     }
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
+      .hero-actions { flex-direction: column; gap: 15px; }
       .grid { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; }
     }
@@ -294,17 +281,11 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo-container">
+  <div class="main-wrapper">
+    
+    <div class="brand-container">
       <img src="https://cdn.prod.website-files.com/65442584e08beb457920f9ab/6a0f9eba8a2a5aef58a3f183_Thrivery%20Logo.png" alt="Thrivery Logo">
     </div>
-    <div class="nav-buttons">
-      <a href="https://thrivery.discourse.group" class="btn-nav-secondary">Enter the Hive</a>
-      <a href="#pricing" class="btn-nav-primary">Sign Up</a>
-    </div>
-  </header>
-
-  <div class="main-wrapper">
     
     <div class="hero-container">
       <h1>Dialectical Behavior Therapy (DBT) changes lives—but only if you actually practice the skills.</h1>
@@ -314,7 +295,11 @@
       <div class="badges">
         🧠 Real-World Practice &nbsp;&nbsp;|&nbsp;&nbsp; 🤝 Peer Accountability &nbsp;&nbsp;|&nbsp;&nbsp; 🔒 100% Private
       </div>
-      <a href="#pricing" class="hero-cta">Join the Community</a>
+      
+      <div class="hero-actions">
+        <a href="https://thrivery.discourse.group" class="btn-hero-secondary">Enter the Hive</a>
+        <a href="#pricing" class="btn-hero-primary">Join the Community</a>
+      </div>
     </div>
 
     <div class="section-title">Who Is This Space For?</div>
