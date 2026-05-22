@@ -5,137 +5,386 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to Thrivery</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       background-color: #f7fafc;
       color: #2d3748;
       margin: 0;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
+      padding: 0;
     }
-    .container {
-      max-width: 850px;
+    /* Header & Navigation */
+    header {
       background: #ffffff;
-      padding: 40px;
+      border-bottom: 1px solid #edf2f7;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo-container img {
+      height: 40px; /* Adjust height based on your logo dimensions */
+      width: auto;
+      display: block;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-nav-secondary {
+      text-decoration: none;
+      color: #2d3748;
+      padding: 10px 18px;
+      font-weight: 600;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      border: 1px solid #cbd5e0;
+      transition: background 0.2s;
+    }
+    .btn-nav-secondary:hover {
+      background-color: #f7fafc;
+    }
+    .btn-nav-primary {
+      text-decoration: none;
+      background-color: #111111;
+      color: #ffffff;
+      padding: 10px 18px;
+      font-weight: 600;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .btn-nav-primary:hover {
+      background-color: #2d3748;
+    }
+
+    /* Main Container */
+    .main-wrapper {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    .hero-container {
+      background: #ffffff;
+      padding: 50px 40px;
       border-radius: 16px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
       text-align: center;
+      margin-bottom: 40px;
     }
     h1 {
       color: #111111;
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       font-weight: 800;
       line-height: 1.3;
+      margin-top: 0;
       margin-bottom: 20px;
       letter-spacing: -0.02em;
     }
     .subtitle {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       line-height: 1.6;
       color: #4a5568;
-      max-width: 700px;
-      margin: 0 auto 30px auto;
+      max-width: 750px;
+      margin: 0 auto 35px auto;
     }
     .badges {
-      margin-bottom: 40px;
+      margin-bottom: 35px;
       font-weight: 600;
       font-size: 1rem;
       color: #4a5568;
     }
-    hr {
-      border: 0;
-      border-top: 1px solid #e2e8f0;
-      margin: 40px 0;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-      text-align: left;
-      margin-bottom: 40px;
-    }
-    .card {
-      background: #fafafa;
-      border: 1px solid #edf2f7;
-      border-radius: 12px;
-      padding: 25px;
-    }
-    .card h3 {
-      margin-top: 0;
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-    .card-students h3 { color: #b7791f; }
-    .card-grads h3 { color: #2c5282; }
-    .card-explorers h3 { color: #2f855a; }
-    
-    .cta-box {
-      background: #fffaf0;
-      border: 1px dashed #feebc8;
-      border-radius: 8px;
-      padding: 20px;
-      max-width: 650px;
-      margin: 0 auto 30px auto;
-      text-align: left;
-    }
-    .cta-button {
+    .hero-cta {
       display: inline-block;
       background-color: #111111;
       color: #ffffff;
       text-decoration: none;
-      padding: 14px 30px;
+      padding: 15px 35px;
       font-weight: 700;
       border-radius: 8px;
       font-size: 1.1rem;
       transition: background 0.2s;
-      margin-bottom: 40px;
     }
-    .cta-button:hover {
+    .hero-cta:hover {
       background-color: #2d3748;
     }
+    
+    /* Audience Grid (Ordered: Explorers, Students, Graduates) */
+    .section-title {
+      font-size: 1.3rem;
+      color: #718096;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 50px 0 30px 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .card-explorers h3 { color: #2f855a; }
+    .card-students h3 { color: #b7791f; }
+    .card-grads h3 { color: #2c5282; }
+    .card p { line-height: 1.6; margin: 0; color: #4a5568; }
+
+    /* Pricing Table Section */
+    #pricing {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 50px 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+      margin-bottom: 40px;
+    }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .pricing-header h2 {
+      font-size: 2rem;
+      color: #111111;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .pricing-header p {
+      color: #718096;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      align-items: stretch;
+    }
+    .price-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 35px 30px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .price-card.featured {
+      border: 2px solid #b7791f;
+      background-color: #fffdf5;
+    }
+    .badge-featured {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #b7791f;
+      color: white;
+      padding: 4px 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .price-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .price-amount {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #111111;
+      margin-bottom: 5px;
+    }
+    .price-period {
+      color: #718096;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .price-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 30px 0;
+      flex-grow: 1;
+    }
+    .price-features li {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: #4a5568;
+      display: flex;
+      align-items: flex-start;
+    }
+    .price-features li::before {
+      content: "✓";
+      color: #2f855a;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .price-card.featured .price-features li::before {
+      color: #b7791f;
+    }
+    .btn-checkout {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: #111111;
+      color: white;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-checkout:hover {
+      background: #2d3748;
+    }
+    .btn-checkout.btn-featured {
+      background: #b7791f;
+    }
+    .btn-checkout.btn-featured:hover {
+      background: #976212;
+    }
+    .btn-checkout.btn-plain {
+      background: transparent;
+      color: #2d3748;
+      border: 1px solid #cbd5e0;
+    }
+    .btn-checkout.btn-plain:hover {
+      background: #f7fafc;
+    }
+
+    /* Bottom Disclaimer */
     .disclaimer {
       color: #a0aec0;
       font-size: 0.85rem;
       line-height: 1.5;
-      max-width: 650px;
-      margin: 0 auto;
+      max-width: 700px;
+      margin: 40px auto 0 auto;
+      text-align: center;
       font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+      header { padding: 15px 20px; flex-direction: column; gap: 15px; text-align: center; }
+      .hero-container { padding: 35px 20px; }
+      h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Dialectical Behavior Therapy (DBT) changes lives—but only if you actually practice the skills.</h1>
-    
-    <p class="subtitle">
-      Welcome to Thrivery, a dedicated peer community for students of DBT. Whether you are a current student, a program graduate maintaining skill, or exploring DBT for the first time, this is your private space to step out of isolation and master these skills alongside peers who truly get it.
-    </p>
+  <header>
+    <div class="logo-container">
+      <img src="https://via.placeholder.com/200x50?text=TheraHive+Logo" alt="TheraHive Logo">
+    </div>
+    <div class="nav-buttons">
+      <a href="https://thrivery.discourse.group" class="btn-nav-secondary">Enter the Hive</a>
+      <a href="#pricing" class="btn-nav-primary">Sign Up</a>
+    </div>
+  </header>
 
-    <div class="badges">
-      🧠 Real-World Practice &nbsp;&nbsp;|&nbsp;&nbsp; 🤝 Peer Accountability &nbsp;&nbsp;|&nbsp;&nbsp; 🔒 100% Private & Secure
+  <div class="main-wrapper">
+    
+    <div class="hero-container">
+      <h1>Dialectical Behavior Therapy (DBT) changes lives—but only if you actually practice the skills.</h1>
+      <p class="subtitle">
+        Welcome to Thrivery, a dedicated peer community for students of DBT. Step out of isolation and master daily skill-building tools alongside global peers who truly get it.
+      </p>
+      <div class="badges">
+        🧠 Real-World Practice &nbsp;&nbsp;|&nbsp;&nbsp; 🤝 Peer Accountability &nbsp;&nbsp;|&nbsp;&nbsp; 🔒 100% Private
+      </div>
+      <a href="#pricing" class="hero-cta">Join the Community</a>
     </div>
 
-    <a href="https://thrivery.discourse.group" class="cta-button">Enter The Private Hive Community</a>
-
-    <hr>
-
-    <h2 style="font-size: 1.4rem; color: #2d3748; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.05em;">
-      👥 Who Is This Space For?
-    </h2>
+    <div class="section-title">Who Is This Space For?</div>
 
     <div class="grid">
+      <div class="card card-explorers">
+        <h3>🔍 Explorers</h3>
+        <p>Curious about Dialectical Behavior Therapy? Learn foundational mental health language, browse fundamental peer concepts, and discover if a full structured group program is your right next step.</p>
+      </div>
+      
       <div class="card card-students">
         <h3>🐝 Active Students</h3>
-        <p style="line-height: 1.6; margin: 0;">Currently in a Therahive cohort or another DBT program? Use this space to crowdsource homework, practice live session scripts, and stay accountable between weekly classes.</p>
+        <p>Currently in a Therahive cohort or external DBT group? Use this private arena to crowdsource difficult homework, practice live validation scripts, and build execution frameworks between classes.</p>
       </div>
       
       <div class="card card-grads">
         <h3>🎓 Graduates</h3>
-        <p style="line-height: 1.6; margin: 0;">Maintaining your independent practice? Sharpen your tools, prevent relapse, and share real-world skill-stacking wins alongside an ongoing support system.</p>
+        <p>Maintaining long-term independent practice? Sharpen critical tools, access ongoing group check-ins, mitigate behavioral slips, and scale up master framework goals within a continuous peer loop.</p>
       </div>
-      
-      <div class="card card-explorers">
-        <h3>🔍 Explorers</h3>
-        <p style="line-height: 1.6; margin: 0;">Curious about Dialectical Behavior Therapy? Learn the foundational language, browse public skills, and see if a full cohort program is your right next step.</p>
+    </div>
+
+    <div id="pricing">
+      <div class="pricing-header">
+        <h2>Choose Your Membership</h2>
+        <p>Gain uninterrupted entry into our secure peer-led discussion tiers.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-title">Basic Monthly</div>
+          <div class="price-amount">$5</div>
+          <div class="price-period">per month</div>
+          <ul class="price-features">
+            <li>Full dashboard interaction access</li>
+            <li>Peer study group creation utilities</li>
+            <li>Homework checking boards</li>
+            <li>Cancel standard subscription anytime</li>
+          </ul>
+          <a href="https://stripe.com" class="btn-checkout">Get Started</a>
+        </div>
+
+        <div class="price-card featured">
+          <div class="badge-featured">Best Value</div>
+          <div class="price-title">Annual Pass + Bonus</div>
+          <div class="price-amount">$60</div>
+          <div class="price-period">per year</div>
+          <ul class="price-features">
+            <li><strong>Everything in Monthly Membership</strong></li>
+            <li>12 full months for the price of 10</li>
+            <li><strong>Bonus:</strong> Free "Setting Intentions" mini-course via TheraHive.com</li>
+            <li>Locked-in pricing protection</li>
+          </ul>
+          <a href="https://stripe.com" class="btn-checkout btn-featured">Join Annually</a>
+        </div>
+
+        <div class="price-card">
+          <div class="price-title">Licensed Practitioners</div>
+          <div class="price-amount">Free</div>
+          <div class="price-period">with active credentials</div>
+          <ul class="price-features">
+            <li>Complimentary platform observation</li>
+            <li>Direct community feedback integration</li>
+            <li>Contribute public macro resources</li>
+            <li>Subject to identity verification check</li>
+          </ul>
+          <a href="https://typeform.com" class="btn-checkout btn-plain">Apply For Free</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="disclaimer">
+      Disclaimer: Thrivery provides peer-led accountability spaces, communal skill tracking, and general study material. We do not offer or replace diagnostic clinical therapeutics, expert medical interventions, or immediate crisis care.
+    </p>
+  </div>
+
+</body>
+</html>
