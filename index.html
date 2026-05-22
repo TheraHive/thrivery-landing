@@ -27,8 +27,12 @@
       top: 0;
       z-index: 1000;
     }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
     .logo-container img {
-      height: 40px; /* Adjust height based on your logo dimensions */
+      height: 35px; /* Scaled perfectly for navigation bars */
       width: auto;
       display: block;
     }
@@ -78,6 +82,11 @@
       text-align: center;
       margin-bottom: 40px;
     }
+    .hero-emoticon {
+      height: 60px;
+      width: auto;
+      margin-bottom: 15px;
+    }
     h1 {
       color: #111111;
       font-size: 2.3rem;
@@ -115,7 +124,7 @@
       background-color: #2d3748;
     }
     
-    /* Audience Grid (Ordered: Explorers, Students, Graduates) */
+    /* Audience Grid */
     .section-title {
       font-size: 1.3rem;
       color: #718096;
@@ -292,17 +301,18 @@
 
   <header>
     <div class="logo-container">
-      <img src="https://via.placeholder.com/200x50?text=TheraHive+Logo" alt="TheraHive Logo">
+      <img src="https://cdn.prod.website-files.com/65442584e08beb457920f9ab/6a0f9eba8a2a5aef58a3f183_Thrivery%20Logo.png" alt="Thrivery Logo">
     </div>
     <div class="nav-buttons">
       <a href="https://thrivery.discourse.group" class="btn-nav-secondary">Enter the Hive</a>
-      <a href="#pricing" class="btn-nav-primary">Sign Up</a>
+      <a href="#pricing" class="btn-nav-primary">入屋</a>
     </div>
   </header>
 
   <div class="main-wrapper">
     
     <div class="hero-container">
+      <img src="https://cdn.prod.website-files.com/65442584e08beb457920f9ab/6a0f9f0205e38cf094573c86_Thrivery%20Emoticon.png" alt="Thrivery Emoticon" class="hero-emoticon">
       <h1>Dialectical Behavior Therapy (DBT) changes lives—but only if you actually practice the skills.</h1>
       <p class="subtitle">
         Welcome to Thrivery, a dedicated peer community for students of DBT. Step out of isolation and master daily skill-building tools alongside global peers who truly get it.
@@ -310,7 +320,7 @@
       <div class="badges">
         🧠 Real-World Practice &nbsp;&nbsp;|&nbsp;&nbsp; 🤝 Peer Accountability &nbsp;&nbsp;|&nbsp;&nbsp; 🔒 100% Private
       </div>
-      <a href="#pricing" class="hero-cta">Join the Community</a>
+      <a href="#pricing" class="hero-cta">加入社羣</a>
     </div>
 
     <div class="section-title">Who Is This Space For?</div>
@@ -344,37 +354,38 @@
           <div class="price-amount">$5</div>
           <div class="price-period">per month</div>
           <ul class="price-features">
-            <li>Full dashboard interaction access</li>
-            <li>Peer study group creation utilities</li>
-            <li>Homework checking boards</li>
-            <li>Cancel standard subscription anytime</li>
+            <li>Full community access</li>
+            <li>Access to TheraHive free resources</li>
+            <li>Peer support</li>
           </ul>
           <a href="https://stripe.com" class="btn-checkout">Get Started</a>
         </div>
 
         <div class="price-card featured">
-          <div class="badge-featured">Best Value</div>
-          <div class="price-title">Annual Pass + Bonus</div>
+          <div class="badge-featured">Bonus Included</div>
+          <div class="price-title">Annual Pass</div>
           <div class="price-amount">$60</div>
           <div class="price-period">per year</div>
           <ul class="price-features">
-            <li><strong>Everything in Monthly Membership</strong></li>
-            <li>12 full months for the price of 10</li>
-            <li><strong>Bonus:</strong> Free "Setting Intentions" mini-course via TheraHive.com</li>
-            <li>Locked-in pricing protection</li>
+            <li>Full community access</li>
+            <li>Access to TheraHive free resources</li>
+            <li>Peer support</li>
+            <li>12 full months of access</li>
+            <li><strong>Bonus:</strong> "Setting Intentions" mini-course from therahive.com (a $25 value)</li>
           </ul>
           <a href="https://stripe.com" class="btn-checkout btn-featured">Join Annually</a>
         </div>
 
         <div class="price-card">
+          <div class="badge-featured" style="background-color: #2c5282;">Practitioners</div>
           <div class="price-title">Licensed Practitioners</div>
           <div class="price-amount">Free</div>
-          <div class="price-period">with active credentials</div>
+          <div class="price-period">Complimentary community access</div>
           <ul class="price-features">
-            <li>Complimentary platform observation</li>
-            <li>Direct community feedback integration</li>
-            <li>Contribute public macro resources</li>
-            <li>Subject to identity verification check</li>
+            <li>Learn and practice DBT skills</li>
+            <li>Interact with prospective clients</li>
+            <li>Access to TheraHive free resources</li>
+            <li>Subject to identity credential verification</li>
           </ul>
           <a href="https://typeform.com" class="btn-checkout btn-plain">Apply For Free</a>
         </div>
