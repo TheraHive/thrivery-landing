@@ -15,52 +15,50 @@
       margin: 0;
       padding: 0;
     }
-    /* Header & Navigation */
+    /* Centered Header & Navigation */
     header {
       background: #ffffff;
       border-bottom: 1px solid #edf2f7;
-      padding: 15px 40px;
+      padding: 30px 20px;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
+      gap: 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
     .logo-container img {
-      height: 35px; /* Scaled perfectly for navigation bars */
+      height: 65px;
       width: auto;
       display: block;
     }
     .nav-buttons {
       display: flex;
-      gap: 12px;
+      gap: 15px;
     }
     .btn-nav-secondary {
       text-decoration: none;
       color: #2d3748;
-      padding: 10px 18px;
+      padding: 10px 22px;
       font-weight: 600;
       border-radius: 6px;
-      font-size: 0.95rem;
+      font-size: 1rem;
       border: 1px solid #cbd5e0;
-      transition: background 0.2s;
+      transition: all 0.2s;
     }
     .btn-nav-secondary:hover {
       background-color: #f7fafc;
+      border-color: #2d3748;
     }
     .btn-nav-primary {
       text-decoration: none;
       background-color: #111111;
       color: #ffffff;
-      padding: 10px 18px;
+      padding: 10px 22px;
       font-weight: 600;
       border-radius: 6px;
-      font-size: 0.95rem;
+      font-size: 1rem;
       transition: background 0.2s;
     }
     .btn-nav-primary:hover {
@@ -69,44 +67,39 @@
 
     /* Main Container */
     .main-wrapper {
-      max-width: 1000px;
+      max-width: 1200px; /* Widened slightly to accommodate 4 clean columns */
       margin: 40px auto;
       padding: 0 20px;
     }
     
     .hero-container {
       background: #ffffff;
-      padding: 50px 40px;
+      padding: 60px 40px;
       border-radius: 16px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
       text-align: center;
       margin-bottom: 40px;
     }
-    .hero-emoticon {
-      height: 60px;
-      width: auto;
-      margin-bottom: 15px;
-    }
     h1 {
       color: #111111;
-      font-size: 2.3rem;
+      font-size: 2.5rem;
       font-weight: 800;
-      line-height: 1.3;
+      line-height: 1.2;
       margin-top: 0;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       letter-spacing: -0.02em;
     }
     .subtitle {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       line-height: 1.6;
       color: #4a5568;
-      max-width: 750px;
-      margin: 0 auto 35px auto;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
     }
     .badges {
-      margin-bottom: 35px;
+      margin-bottom: 40px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: #4a5568;
     }
     .hero-cta {
@@ -114,82 +107,81 @@
       background-color: #111111;
       color: #ffffff;
       text-decoration: none;
-      padding: 15px 35px;
+      padding: 18px 45px;
       font-weight: 700;
       border-radius: 8px;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       transition: background 0.2s;
     }
     .hero-cta:hover {
       background-color: #2d3748;
     }
     
-    /* Audience Grid */
+    /* Audience Grid (Now auto-scaling up to 4 clean columns) */
     .section-title {
       font-size: 1.3rem;
       color: #718096;
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      margin: 50px 0 30px 0;
+      margin: 60px 0 30px 0;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-bottom: 60px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 80px;
     }
     .card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 30px;
+      padding: 30px 25px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
     }
     .card h3 {
       margin-top: 0;
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: 700;
       margin-bottom: 15px;
     }
     .card-explorers h3 { color: #2f855a; }
     .card-students h3 { color: #b7791f; }
     .card-grads h3 { color: #2c5282; }
-    .card p { line-height: 1.6; margin: 0; color: #4a5568; }
+    .card-practitioners h3 { color: #44337a; }
+    .card p { line-height: 1.6; margin: 0; color: #4a5568; font-size: 1rem; }
 
-    /* Pricing Table Section */
+    /* Pricing Section */
     #pricing {
       background: #ffffff;
       border-radius: 16px;
-      padding: 50px 40px;
+      padding: 60px 40px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
     .pricing-header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
     .pricing-header h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #111111;
-      margin-top: 0;
-      margin-bottom: 10px;
+      margin: 0 0 10px 0;
     }
     .pricing-header p {
       color: #718096;
-      font-size: 1.1rem;
-      margin: 0;
+      font-size: 1.2rem;
     }
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       align-items: stretch;
     }
     .price-card {
       border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 35px 30px;
+      padding: 40px 30px;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -205,47 +197,47 @@
       transform: translateX(-50%);
       background: #b7791f;
       color: white;
-      padding: 4px 14px;
-      font-size: 0.75rem;
+      padding: 5px 16px;
+      font-size: 0.8rem;
       font-weight: 700;
       border-radius: 20px;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
     .price-title {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 700;
       margin-bottom: 10px;
     }
     .price-amount {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 800;
       color: #111111;
       margin-bottom: 5px;
     }
     .price-period {
       color: #718096;
-      font-size: 0.95rem;
-      margin-bottom: 20px;
+      font-size: 1rem;
+      margin-bottom: 25px;
     }
     .price-features {
       list-style: none;
       padding: 0;
-      margin: 0 0 30px 0;
+      margin: 0 0 40px 0;
       flex-grow: 1;
     }
     .price-features li {
-      margin-bottom: 12px;
-      font-size: 0.95rem;
+      margin-bottom: 15px;
+      font-size: 1rem;
       color: #4a5568;
       display: flex;
       align-items: flex-start;
+      line-height: 1.4;
     }
     .price-features li::before {
       content: "✓";
       color: #2f855a;
       font-weight: bold;
-      margin-right: 10px;
+      margin-right: 12px;
     }
     .price-card.featured .price-features li::before {
       color: #b7791f;
@@ -256,8 +248,8 @@
       text-decoration: none;
       background: #111111;
       color: white;
-      padding: 12px;
-      border-radius: 6px;
+      padding: 15px;
+      border-radius: 8px;
       font-weight: 600;
       transition: background 0.2s;
     }
@@ -279,21 +271,24 @@
       background: #f7fafc;
     }
 
-    /* Bottom Disclaimer */
+    /* Disclaimer */
     .disclaimer {
       color: #a0aec0;
-      font-size: 0.85rem;
-      line-height: 1.5;
-      max-width: 700px;
-      margin: 40px auto 0 auto;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
       font-style: italic;
     }
     
+    @media (max-width: 1024px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 768px) {
-      header { padding: 15px 20px; flex-direction: column; gap: 15px; text-align: center; }
-      .hero-container { padding: 35px 20px; }
-      h1 { font-size: 1.8rem; }
+      h1 { font-size: 2rem; }
+      .grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -305,14 +300,13 @@
     </div>
     <div class="nav-buttons">
       <a href="https://thrivery.discourse.group" class="btn-nav-secondary">Enter the Hive</a>
-      <a href="#pricing" class="btn-nav-primary">入屋</a>
+      <a href="#pricing" class="btn-nav-primary">Sign Up</a>
     </div>
   </header>
 
   <div class="main-wrapper">
     
     <div class="hero-container">
-      <img src="https://cdn.prod.website-files.com/65442584e08beb457920f9ab/6a0f9f0205e38cf094573c86_Thrivery%20Emoticon.png" alt="Thrivery Emoticon" class="hero-emoticon">
       <h1>Dialectical Behavior Therapy (DBT) changes lives—but only if you actually practice the skills.</h1>
       <p class="subtitle">
         Welcome to Thrivery, a dedicated peer community for students of DBT. Step out of isolation and master daily skill-building tools alongside global peers who truly get it.
@@ -320,7 +314,7 @@
       <div class="badges">
         🧠 Real-World Practice &nbsp;&nbsp;|&nbsp;&nbsp; 🤝 Peer Accountability &nbsp;&nbsp;|&nbsp;&nbsp; 🔒 100% Private
       </div>
-      <a href="#pricing" class="hero-cta">加入社羣</a>
+      <a href="#pricing" class="hero-cta">Join the Community</a>
     </div>
 
     <div class="section-title">Who Is This Space For?</div>
@@ -340,12 +334,17 @@
         <h3>🎓 Graduates</h3>
         <p>Maintaining long-term independent practice? Sharpen critical tools, access ongoing group check-ins, mitigate behavioral slips, and scale up master framework goals within a continuous peer loop.</p>
       </div>
+
+      <div class="card card-practitioners">
+        <h3>🩺 Practitioners</h3>
+        <p>Want to anchor your real-world clinical insights? Learn and practice continuous DBT skills alongside a community, interact safely with prospective clients, and collaborate on macro-level mental health initiatives.</p>
+      </div>
     </div>
 
     <div id="pricing">
       <div class="pricing-header">
         <h2>Choose Your Membership</h2>
-        <p>Gain uninterrupted entry into our secure peer-led discussion tiers.</p>
+        <p>Select your tier to gain entry into our secure peer-led community.</p>
       </div>
 
       <div class="pricing-grid">
@@ -357,8 +356,9 @@
             <li>Full community access</li>
             <li>Access to TheraHive free resources</li>
             <li>Peer support</li>
+            <li>Cancel standard subscription anytime</li>
           </ul>
-          <a href="https://stripe.com" class="btn-checkout">Get Started</a>
+          <a href="YOUR_STRIPE_MONTHLY_LINK" class="btn-checkout">Get Started</a>
         </div>
 
         <div class="price-card featured">
@@ -367,13 +367,11 @@
           <div class="price-amount">$60</div>
           <div class="price-period">per year</div>
           <ul class="price-features">
-            <li>Full community access</li>
-            <li>Access to TheraHive free resources</li>
-            <li>Peer support</li>
+            <li><strong>Everything in Basic Membership</strong></li>
+            <li><strong>Bonus:</strong> "Setting Intentions" minicourse from TheraHive.com ($25 value)</li>
             <li>12 full months of access</li>
-            <li><strong>Bonus:</strong> "Setting Intentions" mini-course from therahive.com (a $25 value)</li>
           </ul>
-          <a href="https://stripe.com" class="btn-checkout btn-featured">Join Annually</a>
+          <a href="YOUR_STRIPE_ANNUAL_LINK" class="btn-checkout btn-featured">Join Annually</a>
         </div>
 
         <div class="price-card">
@@ -387,13 +385,13 @@
             <li>Access to TheraHive free resources</li>
             <li>Subject to identity credential verification</li>
           </ul>
-          <a href="https://typeform.com" class="btn-checkout btn-plain">Apply For Free</a>
+          <a href="YOUR_TYPEFORM_LINK" class="btn-checkout btn-plain">Apply For Free</a>
         </div>
       </div>
     </div>
 
     <p class="disclaimer">
-      Disclaimer: Thrivery provides peer-led accountability spaces, communal skill tracking, and general study material. We do not offer or replace diagnostic clinical therapeutics, expert medical interventions, or immediate crisis care.
+      Disclaimer: Thrivery provides peer-led accountability spaces, communal skill tracking, and general study material. We do not offer diagnostic clinical therapeutics, expert medical interventions, or crisis care.
     </p>
   </div>
 
