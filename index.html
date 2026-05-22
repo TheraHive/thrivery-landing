@@ -15,14 +15,13 @@
       margin: 0;
       padding: 0;
     }
-
     /* Main Container */
     .main-wrapper {
       max-width: 1200px;
       margin: 0 auto;
       padding: 60px 20px;
     }
-    
+
     /* Centered Branding Area */
     .brand-container {
       text-align: center;
@@ -33,7 +32,7 @@
       width: auto;
       display: inline-block;
     }
-    
+
     /* Hero Section Card */
     .hero-container {
       background: #ffffff;
@@ -60,12 +59,23 @@
       margin: 0 auto 40px auto;
     }
     .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px 14px;
       margin-bottom: 40px;
       font-weight: 600;
       font-size: 1.1rem;
       color: #4a5568;
     }
-
+    .badges .separator {
+      color: #cbd5e0;
+    }
+    @media (max-width: 600px) {
+      .badges .separator { display: none; }
+      .badges { gap: 10px; }
+    }
     /* Dual Button Action Row */
     .hero-actions {
       display: flex;
@@ -102,7 +112,7 @@
       background-color: #f7fafc;
       border-color: #2d3748;
     }
-    
+
     /* Audience Grid (4 Columns) */
     .section-title {
       font-size: 1.3rem;
@@ -136,7 +146,6 @@
     .card-grads h3 { color: #2c5282; }
     .card-practitioners h3 { color: #44337a; }
     .card p { line-height: 1.6; margin: 0; color: #4a5568; font-size: 1rem; }
-
     /* Pricing Section */
     #pricing {
       background: #ffffff;
@@ -263,7 +272,6 @@
     .btn-checkout.btn-plain:hover {
       background: #f7fafc;
     }
-
     /* Disclaimer */
     .disclaimer {
       color: #a0aec0;
@@ -274,7 +282,7 @@
       text-align: center;
       font-style: italic;
     }
-    
+
     @media (max-width: 1024px) {
       .grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -287,22 +295,25 @@
   </style>
 </head>
 <body>
-
   <div class="main-wrapper">
-    
+
     <div class="brand-container">
       <img src="https://cdn.prod.website-files.com/65442584e08beb457920f9ab/6a0f9eba8a2a5aef58a3f183_Thrivery%20Logo.png" alt="Thrivery Logo">
     </div>
-    
+
     <div class="hero-container">
       <h1>Dialectical Behavior Therapy (DBT) changes lives—but only if you actually practice the skills.</h1>
       <p class="subtitle">
-        Welcome to Thrivery, a dedicated peer community for students of DBT. Step out of isolation and master daily skill-building tools alongside global peers who truly get it.
+        Welcome to Thrivery — a private community for people who practice DBT skills. Connect with others who understand the work, get support when it's hard, and build the kind of ongoing practice that makes DBT actually stick.
       </p>
       <div class="badges">
-        🧠 Real-World Practice &nbsp;&nbsp;|&nbsp;&nbsp; 🤝 Peer Accountability &nbsp;&nbsp;|&nbsp;&nbsp; 🔒 100% Private
+        <span>🧠 Real-World Practice</span>
+        <span class="separator">|</span>
+        <span>🤝 Peer Accountability</span>
+        <span class="separator">|</span>
+        <span>🔒 100% Private</span>
       </div>
-      
+
       <div class="hero-actions">
         <a href="#pricing" class="btn-hero-primary">Join the Community</a>
         <a href="https://thrivery.discourse.group" class="btn-hero-secondary">Enter the Hive</a>
@@ -310,35 +321,33 @@
     </div>
 
     <div class="section-title">Who Is This Space For?</div>
-
     <div class="grid">
       <div class="card card-explorers">
         <h3>🔍 Explorers</h3>
-        <p>Curious about Dialectical Behavior Therapy? Learn foundational mental health language, browse fundamental peer concepts, and discover if a full structured group program is your right next step.</p>
+        <p>Self-studying DBT, exploring it for the first time, or coming from a program with another provider? This is a place to practice alongside people who understand the work — and to discover whether a structured program like TheraHive is the right next step for you.</p>
       </div>
-      
+
       <div class="card card-students">
         <h3>🐝 Active Students</h3>
-        <p>Currently in a Therahive cohort or external DBT group? Use this private arena to crowdsource difficult homework, practice live validation scripts, and build execution frameworks between classes.</p>
+        <p>Currently in a TheraHive cohort or another DBT program? Use this space to practice skills between sessions, get support when the homework feels hard, and stay connected to people who are doing the same work.</p>
       </div>
-      
+
       <div class="card card-grads">
         <h3>🎓 Graduates</h3>
-        <p>Maintaining long-term independent practice? Sharpen critical tools, access ongoing group check-ins, mitigate behavioral slips, and scale up master framework goals within a continuous peer loop.</p>
+        <p>Completed a DBT program and want to keep the skills alive? Stay connected to a community that takes the work seriously, get support when old patterns resurface, and build on everything you've already learned.</p>
       </div>
 
       <div class="card card-practitioners">
         <h3>🩺 Practitioners</h3>
-        <p>Want to anchor your real-world clinical insights? Learn and practice continuous DBT skills alongside a community, interact safely with prospective clients, and collaborate on macro-level mental health initiatives.</p>
+        <p>A therapist or counsellor who works with DBT clients? Deepen your own practice alongside the people you support, stay connected to the lived experience of doing this work, and contribute your expertise to a community that takes DBT seriously.</p>
       </div>
     </div>
 
     <div id="pricing">
       <div class="pricing-header">
         <h2>Choose Your Membership</h2>
-        <p>Select your tier to gain entry into our secure peer-led community.</p>
+        <p>Find the membership that works for you.</p>
       </div>
-
       <div class="pricing-grid">
         <div class="price-card">
           <div class="price-title">Basic Monthly</div>
@@ -351,7 +360,6 @@
           </ul>
           <a href="YOUR_STRIPE_MONTHLY_LINK" class="btn-checkout">Get Started</a>
         </div>
-
         <div class="price-card featured">
           <div class="badge-featured">Bonus Included</div>
           <div class="price-title">Annual Pass</div>
@@ -363,7 +371,6 @@
           </ul>
           <a href="YOUR_STRIPE_ANNUAL_LINK" class="btn-checkout btn-featured">Join Annually</a>
         </div>
-
         <div class="price-card">
           <div class="badge-featured" style="background-color: #2c5282;">Practitioners</div>
           <div class="price-title">Licensed Practitioners</div>
@@ -371,7 +378,7 @@
           <div class="price-period">Complimentary community access*</div>
           <ul class="price-features">
             <li class="check">Learn and practice DBT skills</li>
-            <li class="check">Interact with prospective clients</li>
+            <li class="check">Stay connected to the lived experience of your clients</li>
             <li class="check">Access to TheraHive free resources</li>
             <li class="asterisk">Subject to identity credential verification</li>
           </ul>
@@ -381,9 +388,9 @@
     </div>
 
     <p class="disclaimer">
-      Disclaimer: Thrivery provides peer-led accountability spaces, communal skill tracking, and general study material. We do not offer diagnostic clinical therapeutics, expert medical interventions, or crisis care.
+      Thrivery is a peer community for DBT skills practice and accountability. We are not a clinical service and do not provide therapy, medical advice, or crisis support.
     </p>
-  </div>
 
+  </div>
 </body>
 </html>
