@@ -29,7 +29,7 @@
       margin-bottom: 40px;
     }
     .brand-container img {
-      height: 75px; /* Large, prominent branding */
+      height: 75px;
       width: auto;
       display: inline-block;
     }
@@ -72,6 +72,20 @@
       justify-content: center;
       gap: 20px;
     }
+    .btn-hero-primary {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #111111;
+      color: #ffffff;
+      padding: 18px 40px;
+      font-weight: 700;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      transition: background 0.2s;
+    }
+    .btn-hero-primary:hover {
+      background-color: #2d3748;
+    }
     .btn-hero-secondary {
       display: inline-block;
       text-decoration: none;
@@ -87,20 +101,6 @@
     .btn-hero-secondary:hover {
       background-color: #f7fafc;
       border-color: #2d3748;
-    }
-    .btn-hero-primary {
-      display: inline-block;
-      text-decoration: none;
-      background-color: #111111;
-      color: #ffffff;
-      padding: 18px 40px;
-      font-weight: 700;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      transition: background 0.2s;
-    }
-    .btn-hero-primary:hover {
-      background-color: #2d3748;
     }
     
     /* Audience Grid (4 Columns) */
@@ -219,14 +219,21 @@
       align-items: flex-start;
       line-height: 1.4;
     }
-    .price-features li::before {
+    .price-features li.check::before {
       content: "✓";
       color: #2f855a;
       font-weight: bold;
       margin-right: 12px;
     }
-    .price-card.featured .price-features li::before {
+    .price-card.featured .price-features li.check::before {
       color: #b7791f;
+    }
+    .price-features li.asterisk::before {
+      content: "*";
+      color: #a0aec0;
+      font-weight: bold;
+      margin-right: 15px;
+      margin-left: 4px;
     }
     .btn-checkout {
       display: block;
@@ -297,8 +304,8 @@
       </div>
       
       <div class="hero-actions">
-        <a href="https://thrivery.discourse.group" class="btn-hero-secondary">Enter the Hive</a>
         <a href="#pricing" class="btn-hero-primary">Join the Community</a>
+        <a href="https://thrivery.discourse.group" class="btn-hero-secondary">Enter the Hive</a>
       </div>
     </div>
 
@@ -338,10 +345,9 @@
           <div class="price-amount">$5</div>
           <div class="price-period">per month</div>
           <ul class="price-features">
-            <li>Full community access</li>
-            <li>Access to TheraHive free resources</li>
-            <li>Peer support</li>
-            <li>Cancel standard subscription anytime</li>
+            <li class="check">Full community access</li>
+            <li class="check">Access to TheraHive free resources</li>
+            <li class="check">Peer support</li>
           </ul>
           <a href="YOUR_STRIPE_MONTHLY_LINK" class="btn-checkout">Get Started</a>
         </div>
@@ -352,9 +358,8 @@
           <div class="price-amount">$60</div>
           <div class="price-period">per year</div>
           <ul class="price-features">
-            <li><strong>Everything in Basic Membership</strong></li>
-            <li><strong>Bonus:</strong> "Setting Intentions" minicourse from TheraHive.com ($25 value)</li>
-            <li>12 full months of access</li>
+            <li class="check"><strong>Everything in Basic Membership</strong></li>
+            <li class="check"><strong>Bonus:</strong> "Setting Intentions" minicourse from TheraHive.com ($25 value)</li>
           </ul>
           <a href="YOUR_STRIPE_ANNUAL_LINK" class="btn-checkout btn-featured">Join Annually</a>
         </div>
@@ -363,12 +368,12 @@
           <div class="badge-featured" style="background-color: #2c5282;">Practitioners</div>
           <div class="price-title">Licensed Practitioners</div>
           <div class="price-amount">Free</div>
-          <div class="price-period">Complimentary community access</div>
+          <div class="price-period">Complimentary community access*</div>
           <ul class="price-features">
-            <li>Learn and practice DBT skills</li>
-            <li>Interact with prospective clients</li>
-            <li>Access to TheraHive free resources</li>
-            <li>Subject to identity credential verification</li>
+            <li class="check">Learn and practice DBT skills</li>
+            <li class="check">Interact with prospective clients</li>
+            <li class="check">Access to TheraHive free resources</li>
+            <li class="asterisk">Subject to identity credential verification</li>
           </ul>
           <a href="YOUR_TYPEFORM_LINK" class="btn-checkout btn-plain">Apply For Free</a>
         </div>
